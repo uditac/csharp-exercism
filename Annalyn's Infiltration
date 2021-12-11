@@ -1,0 +1,100 @@
+using System;
+
+        static class QuestLogic
+        {
+            public static bool CanFastAttack(bool knightIsAwake)
+            {
+                bool CanFastAttackIt;
+                if (knightIsAwake == true)
+                {
+                    CanFastAttackIt = false;
+                }
+                else
+                {
+                    CanFastAttackIt = true;
+                }
+                return CanFastAttackIt;
+                throw new NotImplementedException("Please implement the (static) QuestLogic.CanFastAttack() method");
+              
+            }
+
+            public static bool CanSpy(bool knightIsAwake, bool archerIsAwake, bool prisonerIsAwake)
+            {
+                var CanSpyIt = true;
+                if (knightIsAwake == true || archerIsAwake == true || prisonerIsAwake == true)
+                {
+                    CanSpyIt = true;
+                }
+                else
+                {
+                    CanSpyIt = false;
+                }
+                return CanSpyIt;
+              //  throw new NotImplementedException("Please implement the (static) QuestLogic.CanSpy() method");
+              
+            }
+
+            public static bool CanSignalPrisoner(bool archerIsAwake, bool prisonerIsAwake)
+            {
+                var CanSignalPrisonerit = true;
+                if (prisonerIsAwake == true && archerIsAwake == false)
+                {
+                    CanSignalPrisonerit = true;
+                }
+                else
+                {
+                    CanSignalPrisonerit = false;
+                }
+                return CanSignalPrisonerit;
+                throw new NotImplementedException("Please implement the (static) QuestLogic.CanSignalPrisoner() method");
+               
+            }
+
+            public static bool CanFreePrisoner(bool knightIsAwake, bool archerIsAwake, bool prisonerIsAwake, bool petDogIsPresent)
+            {
+                var CanFreePrisonerIt = true;
+                if (archerIsAwake == false && knightIsAwake == false && prisonerIsAwake == false && petDogIsPresent == true)
+                {
+                    CanFreePrisonerIt = true;
+                }
+             else if (archerIsAwake == false && knightIsAwake == false && prisonerIsAwake == true && petDogIsPresent == true)
+                {
+                    CanFreePrisonerIt = true;
+                }
+                else if (archerIsAwake == false && knightIsAwake == false && prisonerIsAwake == true && petDogIsPresent == false)
+                {
+                    CanFreePrisonerIt = true;
+                }
+             else if (archerIsAwake == false && knightIsAwake == true && prisonerIsAwake == false && petDogIsPresent == true)
+                {
+                    CanFreePrisonerIt = true;
+                }
+             else if (archerIsAwake == false && knightIsAwake == true && prisonerIsAwake == true && petDogIsPresent == true)
+                {
+                    CanFreePrisonerIt = true;
+                }
+                else
+                {
+                    CanFreePrisonerIt = false;
+                }
+                return CanFreePrisonerIt;
+                throw new NotImplementedException("Please implement the (static) QuestLogic.CanFreePrisoner() method");
+               
+            }
+
+            static bool Main(string[] args)
+            {
+                var knightIsAwake = true;
+                var archerIsAwake = true;
+              //  var spyIsAwake = true;
+                var prisonerIsAwake = true;
+                var petDogIsPresent = true;
+
+            CanFastAttack(knightIsAwake);
+                CanSpy(knightIsAwake, archerIsAwake, prisonerIsAwake);
+                CanSignalPrisoner(archerIsAwake, prisonerIsAwake);
+                CanFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent);
+
+                return true;
+            }
+        }
